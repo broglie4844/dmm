@@ -5,36 +5,36 @@ from os import environ
 id_pattern = re.compile(r'^.\d+$')
 
 # Bot information
-SESSION = environ.get('SESSION', '')
+SESSION = environ.get('SESSION', 'hello')
 USER_SESSION = environ.get('USER_SESSION', 'User_Bot')
-APP_ID = int(environ['APP_ID'])
-API_HASH = environ['API_HASH']
-BOT_TOKEN = environ['BOT_TOKEN']
+APP_ID = int(environ['APP_ID', '18554464'])
+API_HASH = environ['API_HASH', '61aafd0722a7ec171f13a1a453440ac6']
+BOT_TOKEN = environ['BOT_TOKEN', '5550116639:AAFubaLYp7MkPm_Zgxop5bHSRZnUXPLhOsc']
 USERBOT_STRING_SESSION = environ.get('USERBOT_STRING_SESSION')
-BOT_OWNER = int(os.environ.get("BOT_OWNER", 1069002447))
-BOT_USERNAME = os.environ.get("BOT_USERNAME")
+BOT_OWNER = int(os.environ.get("BOT_OWNER", "5378105468"))
+BOT_USERNAME = os.environ.get("BOT_USERNAME", "t48444844bot")
 
 # Bot settings
 MAX_RESULTS = int(environ.get('MAX_RESULTS', 10))
-CACHE_TIME = int(environ.get('CACHE_TIME', 300))
+CACHE_TIME = int(environ.get('CACHE_TIME', 30))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS'].split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ['CHANNELS'].split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS', 5378105468].split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ['CHANNELS', -1001796710607].split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else auth_channel
-LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", -100))
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", -1001796710607))
 
 # MongoDB information
-DATABASE_URI = environ['DATABASE_URI']
-DATABASE_NAME = environ['DATABASE_NAME']
+DATABASE_URI = environ['DATABASE_URI', 'mongodb+srv://dmm123:dmm123@cluster0.axlra.mongodb.net/?retryWrites=true&w=majority']
+DATABASE_NAME = environ['DATABASE_NAME', 'dmmcontent']
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 #for broadcast and force sub
-BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", ""))
+BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", "True"))
 UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", None)
 
 #ban/unban
@@ -42,7 +42,7 @@ BANNED_USERS = set(int(x) for x in os.environ.get("BANNED_USERS", "1234567890").
 BANNED_CHAT_IDS = list(set(int(x) for x in os.environ.get("BANNED_CHAT_IDS", "-1001362659779 -1001255795497").split()))
 
 #for broadcast and user stts db
-MONGODB_URI = os.environ.get("MONGODB_URI", "")
+MONGODB_URI = os.environ.get("MONGODB_URI", "mongodb+srv://dmm123:dmm123@cluster0.axlra.mongodb.net/?retryWrites=true&w=majority")
 SESSION_NAME = os.environ.get("SESSION_NAME", "LeoMediaSearchBot")
 # Messages
 default_start_massege = """
