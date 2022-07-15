@@ -7,9 +7,9 @@ id_pattern = re.compile(r'^.\d+$')
 # Bot information
 SESSION = environ.get('SESSION', 'hello')
 USER_SESSION = environ.get('USER_SESSION', 'User_Bot')
-APP_ID = int(environ['APP_ID', '18554464'])
-API_HASH = environ['API_HASH', '61aafd0722a7ec171f13a1a453440ac6']
-BOT_TOKEN = environ['BOT_TOKEN', '5550116639:AAFubaLYp7MkPm_Zgxop5bHSRZnUXPLhOsc']
+APP_ID = int(environ['APP_ID', 18554464])
+API_HASH = environ['API_HASH', 61aafd0722a7ec171f13a1a453440ac6]
+BOT_TOKEN = environ['BOT_TOKEN', 5550116639:AAFubaLYp7MkPm_Zgxop5bHSRZnUXPLhOsc]
 USERBOT_STRING_SESSION = environ.get('USERBOT_STRING_SESSION')
 BOT_OWNER = int(os.environ.get("BOT_OWNER", "5378105468"))
 BOT_USERNAME = os.environ.get("BOT_USERNAME", "t48444844bot")
